@@ -14,13 +14,11 @@
 ;; Part 1
 
 (defn result-part-1 [ints]
-  (->> (combo/cartesian-product ints ints)
-       (into #{} (comp (filter (fn [[x y]]
-                                 (-> (+ x y)
-                                     (= 2020))))
-                       (map set)))
-       first
-       (apply *)))
+  (some->> (combo/cartesian-product ints ints)
+           (some (fn [[x y :as pair]]
+                   (when (-> (+ x y) (= 2020))
+                     pair)))
+           (apply *)))
 
 (comment
   (result-part-1 input)
@@ -29,13 +27,11 @@
 ;; Part 2
 
 (defn result-part-2 [ints]
-  (->> (combo/cartesian-product ints ints ints)
-       (into #{} (comp (filter (fn [[x y z]]
-                                 (-> (+ x y z)
-                                     (= 2020))))
-                       (map set)))
-       first
-       (apply *)))
+  (some->> (combo/cartesian-product ints ints ints)
+           (some (fn [[x y z :as triplet]]
+                   (when (-> (+ x y z) (= 2020))
+                     triplet)))
+           (apply *)))
 
 (comment
   (result-part-2 input)
