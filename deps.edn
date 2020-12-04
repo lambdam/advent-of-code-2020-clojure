@@ -1,7 +1,11 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+ :deps {
+        net.cgrand/xforms {:mvn/version "0.19.2"}
+        orchestra/orchestra {:mvn/version "2020.09.18-1"}
+        org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/math.combinatorics {:mvn/version "0.1.6"}
-        net.cgrand/xforms {:mvn/version "0.19.2"}}
+        org.clojure/spec.alpha {:mvn/version "0.2.187"}
+        }
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.0.0"}}}
