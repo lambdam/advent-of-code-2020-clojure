@@ -5,6 +5,7 @@
         org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/math.combinatorics {:mvn/version "0.1.6"}
         org.clojure/spec.alpha {:mvn/version "0.2.187"}
+        org.clojure/tools.namespace {:mvn/version "1.0.0"}
         }
  :aliases
  {:test {:extra-paths ["test"]
